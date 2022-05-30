@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.meeting.user.UserMeetingMapper">
+	<select id="findAll" resultType="com.example.demo.domain.Meeting.Meeting">select*from meeting_info where username =#{username}</select>
+	
+	<select id="selectOne" resultType="com.example.demo.domain.Meeting.Meeting" >select*from meeting_info where id= #{id} </select>
+	
+	<insert id="insert" keyProperty="id" useGeneratedKeys="true">insert into meeting_info(roomid,username,day,start,close,people,owner,title,remarks) values(#{roomid}, #{username}, #{start}, #{TimeStart}, #{TimeEnd}, #{people}, #{owner}, #{title}, #{remarks})</insert>
+	
+	<update id="update">update meeting_info set roomid=#{roomid}, username=#{username}, start=#{start},TimeStart=#{TimeStart},TimeEnd=#{TimeEnd} ,people=#{people}, owner=#{owner}, title=#{title}, remarks=#{remarks}  where id= #{id}</update>
+	
+	<delete id="delete">delete from meeting_info where id = #{id}</delete>
+	
+	<select id="findAllReserving" resultType="com.example.demo.domain.FullCalendar.DailySummary">select title,start,TimeStart,TimeEnd from meeting_info </select>
+</mapper>
+
+<!-- 参考URL
+①https://qiita.com/fftcy-sttkm/items/57e8596820cff28ec682#%E7%92%B0%E5%A2%83
+Xmlファイル検索条件 -->
+
+<!-- selectOne  ==  ログインID=usernameでDB内検索→検索結果の＜＜一覧＞＞をmeetings/topに返す -->
+<!-- findAll文　==  ログインID=usernameでDB内検索→検索結果をmeetings/topに返す -->
+<!-- update文　==  更新処理 -->
+<!-- delete文　==  削除処理-->
+<!-- findAllReserving文　==  カレンダーメソッド受け渡し-->

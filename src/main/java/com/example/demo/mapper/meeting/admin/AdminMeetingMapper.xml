@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.meeting.admin.AdminMeetingMapper">
+	<select id="findAll" resultType="com.example.demo.domain.Meeting.Meeting">select*from meeting_info </select>
+	
+	<select id="selectOne" resultType="com.example.demo.domain.Meeting.Meeting" >select*from meeting_info where id= #{id} </select>
+	
+	<insert id="insert" keyProperty="username" >insert into meeting_info(roomid,username,daytime,people,owner,purpose,remarks) values(#{roomid}, #{username}, #{daytime},#{people},#{owner},#{purpose},#{remarks})</insert>
+	
+	<update id="update">update meeting_info set roomid=#{roomid}, username=#{username}, daytime=#{daytime}, people=#{people}, owner=#{owner}, purpose=#{purpose}, remarks=#{remarks}  where id= #{id}</update>
+	
+	<delete id="delete">delete from meeting_info where id = #{id}</delete>
+</mapper>
+
+<!-- 参考URL
+①https://qiita.com/fftcy-sttkm/items/57e8596820cff28ec682#%E7%92%B0%E5%A2%83
+Xmlファイル検索条件 -->
+
+<!-- selectOne  ==  特定の登録情報をidをもとに１件表示 -->
+<!-- findAll　　==  全件表示処理 -->
+<!-- update文　 ==  更新処理 -->
+<!-- delete文　 ==  削除処理-->

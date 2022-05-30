@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="UTF-8"></meta>
+
+    <!-- Bootstrap -->
+    <link th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}" rel="stylesheet"></link>
+    <script th:src="@{/webjars/jquery/2.0.3/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
+
+    <!-- CSS読込 -->
+    <link th:href="@{/css/home.css}" rel="stylesheet"></link>
+
+
+
+    <title>Home</title>
+</head>
+<body>
+<!--  ヘッダー   -->
+    <nav class="navbar navbar-inverse navbar-fixed-top ">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand"th:href="@{/top}">共用施設予約システム</a>
+            </div>
+            <form method="post" th:action="@{/logout}">
+                <button class="btn btn-link pull-right navbar-brand" type="submit">
+                    ログアウト
+                </button>
+            </form>
+        </div>
+        
+    </nav>
+<!--  ヘッダー   -->
+    
+    
+<!--  サイドバー  -->
+    <div class="container-xxl">
+            <div class="col-sm-2 sidebar">
+                <ul class="nav flex-column"> 
+                  
+     <!--  サイドバー上部  -->
+            <div>
+　　　　　 <!--  ユーザ情報   -->
+                <br>
+				<span th:text="*{username}">Username</span>	
+				  
+				 <div class="d-flex justify-content-between">
+				 
+				</div>
+           <!--  ユーザ情報   -->
+			</div>     
+　　 <!--  サイドバー上部  -->
+                   
+
+     <!--  サイドバー中部～下部  -->
+   　　　  <!--  共通メニュー  -->      
+                   <li class="nav-item border-bottom" >
+                        <a th:href="@{'/top'}">トップ</a>
+                        <a th:href="@{/Schedule}">予約状況</a>  
+                   </li>           
+   　　　  <!--  共通メニュー  -->  
+   
+   
+   
+           <!--  ユーザー専用メニュー  -->                    
+                   <li  class="nav-item border-bottom" sec:authorize="hasAuthority('USER')">
+                        <a th:href="@{/meetings/list}">集会室予約履歴</a>
+                        <a th:href="@{#}">ユーザー情報</a>
+                        <a th:href="@{/ContactForm}">問い合わせ</a>
+                   </li>     
+           <!--  ユーザーメニュー  -->   	
+                     
+           
+               	             
+　 　      <!-- 管理者専用表示メニュー -->
+                   <li class="nav-item border-bottom" sec:authorize="hasAuthority('ADMIN')">
+                        <a th:href="@{'/users/UserCreate'}">ユーザー登録</a>                      
+                        <a th:href="@{'/users'}">登録ユーザー一覧</a>
+                        <a th:href="@{/meetings/admin}">集会室全予約履歴</a>
+                   </li>              
+           <!-- 管理者用表示メニュー -->
+     <!--  サイドバー中部～下部  -->
+    
+                </ul>
+            </div>
+        </div>
+<!--  サイドバー  -->
+
+<!--  コンテンツ表示部分  -->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-offset-1 ">
+               <div layout:fragment="contents"></div>
+            </div>
+        </div>
+    </div>
+<!--  コンテンツ表示部分  -->
+</body>
+</html>

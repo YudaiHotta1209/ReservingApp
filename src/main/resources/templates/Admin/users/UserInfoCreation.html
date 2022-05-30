@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+       layout:decorate="~{Layout/Layout}">
+<head>
+<meta charset="utf-8" />
+<title>ユーザー情報詳細登録ページ</title>
+    <link th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}" rel="stylesheet"></link>
+    <script th:src="@{/webjars/jquery/2.0.3/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
+</head>
+<body>
+  <div layout:fragment="contents">
+  <div class="container">
+    <div class="card card-primary mb-3">
+            <h5 >入力フォーム</h5>
+            <form th:method="post" th:action="@{/userinfo}" th:object="${user_info}"> 
+
+                                                                                  
+<!--  ID入力フォーム  Model名＝username -->                  
+                <div class="form-group row">
+                    <label class="col-md-2 control-label">ユーザーID</label>
+                    <div class="col-md-3">
+                      <input class="form-control" type="text" name="username" th:value="*{username}"placeholder="ユーザーID"/>
+                      <div class="text-danger" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></div>
+                    </div>
+                </div>
+                
+                
+<!-- 連絡入力フォーム Model名＝address  -->                  
+                <div class="form-group row">
+                    <label class="col-md-2 control-label">連絡先</label>
+                    <div class="col-md-3">
+                      <input class="form-control" type="text" name="address" th:value="*{address}"placeholder="連絡先"/>
+                      <div class="text-danger" th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></div>
+                    </div>
+                </div>   
+                                    
+<!-- 　勤務先入力フォーム Model名＝workplace  -->          
+                <div class="form-group row">
+                    <label class="col-md-2 control-label">勤務先</label>
+                    <div class="col-md-3">
+                      <input class="form-control" type="text" name="workplace" th:value="*{workplace}"placeholder="勤務先のご住所"/>
+                      <div class="text-danger" th:if="${#fields.hasErrors('workplace')}" th:errors="*{workplace}"></div>
+                    </div>
+                </div>   
+                
+<!-- 　メールアドレス入力フォーム Model名＝Mailaddress -->          
+                <div class="form-group row">
+                    <label class="col-md-2 control-label">メールアドレス</label>
+                    <div class="col-md-3">
+                      <input class="form-control" type="text" name="mailaddress" th:value="*{mailaddress}"placeholder="ex)xxxx@gmail.com"/>
+                      <div class="text-danger" th:if="${#fields.hasErrors('mailaddress')}" th:errors="*{mailaddress}"></div>
+                    </div>
+                </div>
+                
+<!-- 　備考欄フォーム Model名＝daytime  -->          
+                <div class="form-group row">
+                    <label class="col-md-2 control-label">備考欄</label>
+                    <div class="col-md-3">
+                      <input class="form-control" type="text" name="information" th:value="*{information}"placeholder="備考欄"/>
+                      <div class="text-danger" th:if="${#fields.hasErrors('information')}" th:errors="*{information}"></div>
+                    </div>
+                </div>                
+                  
+                            
+
+  
+<!--  DB送信用ボタン  -->                                 
+                <div class="form-group row">
+                    <div class="offset-md-2 col-md-10">
+                      <button class="btn btn-primary">登録する</button>
+                    </div>
+                </div>
+                
+            </form>
+        </div>
+      </div>
+    </div>
+
+</body>
+</html>
