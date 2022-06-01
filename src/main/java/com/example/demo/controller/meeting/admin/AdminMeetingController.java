@@ -56,10 +56,10 @@ public class AdminMeetingController {
 		return "Admin/request/m-RequestList";
 	}
 	
-    //③新規登録ページ表示
+    //②新規登録ページ表示
 	@GetMapping("/RequestNew")
 	public String newMeeting(@ModelAttribute("meeting_info") Meeting meeting, Model model) {
-		return "Admin/request/m-new";
+		return "Admin/request/m-RequestNew";
 	}
 
 //－－－－－－－－－－－－－－－－－－画面遷移－－－－－－－－－－－－－－－－－－－－－//	
@@ -73,7 +73,7 @@ public class AdminMeetingController {
 	@PostMapping
 	public String create(@ModelAttribute("meeting_info") @Validated Meeting meeting, BindingResult result, Model model) {
 		if (result.hasErrors()) {
-			return "Admin/request/m-new";
+			return "Admin/request/m-RequestNew";
 		} else {
 			adminMeetingService.insert(meeting);
 			return "redirect:/meetings/admin";

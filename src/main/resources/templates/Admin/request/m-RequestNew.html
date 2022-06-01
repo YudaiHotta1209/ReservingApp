@@ -18,24 +18,8 @@
             <h5 class="card-title">入力フォーム</h5>
           </div>
         <div class="card-body">
-              <form th:method="post" th:action="@{/meetings}" th:object="${meeting_info}">
-              
-              
-<!--  部屋番号選択フォーム Model名＝roomid  -->            
-               <div class="form-group row">
-                   <label class="col-md-2 control-label">集会室番号</label>
-                      <div class="col-md-5">
-                        <select class="form-select" aria-label="Default select example"multiple="multiple" size="3" name="roomid" th:value="*{roomid}" >
-                           <option selected>部屋番号</option>
-                           <option value="1">1</option>
-                           <option value="2">2</option>
-                           <option value="3">3</option>
-                         </select>  
-                       </div>
-                     <div th:if="${#fields.hasErrors('roomid')}" th:errors="*{roomid}"></div>
-               </div>      
-               
-                                 
+              <form th:method="post" th:action="@{/meetings/admin}" th:object="${meeting_info}">
+                                                                                     
 <!--  部屋番号選択フォーム Model名＝roomid  -->            
                <div class="form-group row">
                    <label class="col-md-2 control-label">集会室番号</label>
@@ -68,12 +52,8 @@
                       <input class="form-control" type="text" name="owner" th:value="*{owner}"placeholder="利用者名"/>
                       <div class="text-danger" th:if="${#fields.hasErrors('owner')}" th:errors="*{owner}"></div>
                     </div>
-                </div>   
-                
-                
-                
-                
-                
+                </div>                                   
+                                           
 <!-- 　日時選択フォームフォーム Model名＝daytime  -->          
                 <div class="form-group row">
                     <label class="col-md-2 control-label">利用日</label>
@@ -134,7 +114,14 @@
                       <input class="form-control" type="text" name="remarks" th:value="*{remarks}" placeholder="備考欄へは管理事務所へ要望事項がある場合のみ入力ください。"/>
                       <div class="text-danger" th:if="${#fields.hasErrors('remarks')}" th:errors="*{remarks}"></div>
                     </div>
-                </div>         
+                </div>      
+
+<!--  DB送信用ボタン  -->                                 
+                <div class="form-group row">
+                    <div class="offset-md-2 col-md-10">
+                      <button class="btn btn-primary">申請する</button>
+                    </div>
+                </div>                   
                 
                 
             </form>
