@@ -24,23 +24,8 @@
 
 		<div class="container">
 			<div class="card card-primary mb-3">
-				<h1>申請履歴</h1>
-				<div class="wrapper">
-					<ul class="tab">
-						<li><a href="#list">一覧</a></li>
-						<li><a href="#calendar">カレンダー</a></li>
-					</ul>
+				<h1>申請リスト</h1>
 
-
-
-					<div id="list" class="area">
-						<h2>リスト</h2>
-						<div class="card-header">
-							<h5 class="card-title">
-								申請はこちらから→<a href="/meetings/admin/RequestNew"
-									class="btn btn-success float-right">利用申し込み</a>
-							</h5>
-						</div>
 						<!-- 登録件数が0件の場合（meeting.siza(0)に表示される-->
 						<div class="card-body" th:if="!${meeting_info.size()}">
 							<p>予約リクエストがありません。</p>
@@ -88,10 +73,7 @@
 					<!--/area-->
 				</div>
 
-				<div id="calendar" class="area">
-					<h2>カレンダー</h2>
-					<!--/area-->
-				</div>
+
 				<!--wrapper-->
 			</div>
 
@@ -101,7 +83,6 @@
 
 
 
-		</div>
-	</div>
+
 </body>
 </html>

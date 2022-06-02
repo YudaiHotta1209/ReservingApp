@@ -27,6 +27,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		http
 		.authorizeRequests()
 		.mvcMatchers("/login/**").permitAll()
+		.mvcMatchers("/users/**").hasAuthority("ADMIN")
 		.anyRequest().authenticated()
 		.and()
 		.formLogin()

@@ -13,13 +13,3 @@
 	
 	<select id="findAllReserving" resultType="com.example.demo.domain.FullCalendar.DailySummary">select title,start,TimeStart,TimeEnd from meeting_info </select>
 </mapper>
-
-<!-- 参考URL
-①https://qiita.com/fftcy-sttkm/items/57e8596820cff28ec682#%E7%92%B0%E5%A2%83
-Xmlファイル検索条件 -->
-
-<!-- selectOne  ==  ログインID=usernameでDB内検索→検索結果の＜＜一覧＞＞をmeetings/topに返す -->
-<!-- findAll文　==  ログインID=usernameでDB内検索→検索結果をmeetings/topに返す -->
-<!-- update文　==  更新処理 -->
-<!-- delete文　==  削除処理-->
-<!-- findAllReserving文　==  カレンダーメソッド受け渡し-->

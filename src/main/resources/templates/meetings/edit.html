@@ -16,7 +16,7 @@
 		<div class="card card-primary mb-3">  			
 		　　<div class="card-body">
             <h5 >入力フォーム</h5>
-            		<form th:action="@{/meetings/{username}(username=*{username})}" th:method="put" th:object="${meeting_info}">
+            		<form th:action="@{/meetings/{id}(id=*{id})}" th:method="put" th:object="${meeting_info}">
 <!--  部屋番号選択フォーム Model名＝roomid  -->            
                <div class="form-group row">
                    <label class="col-md-2 control-label">集会室番号</label>
@@ -27,8 +27,8 @@
                            <option value="2">2</option>
                            <option value="3">3</option>
                          </select>  
-                       </div>
-                     <div th:if="${#fields.hasErrors('roomid')}" th:errors="*{roomid}"></div>
+                        <div th:if="${#fields.hasErrors('roomid')}" th:errors="*{roomid}"></div>
+                      </div>                     
                </div>                        
 <!--  ID入力フォーム  Model名＝username -->                  
                 <div class="form-group row">
@@ -82,6 +82,7 @@
                             <option value="お稽古事">お稽古事</option>
                             <option value="理事会">理事会</option>
                         </select>
+                        <div class="text-danger" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></div>
                     </div>
                 </div>            
                 

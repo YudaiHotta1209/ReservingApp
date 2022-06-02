@@ -27,7 +27,5 @@ public interface UserMeetingMapper {
 	
 	//カレンダー表示検索
 	//全件検索処理
-	List<DailySummary> findAllReserving(); 
-	
-///カラムが多いためどうパッケージ内のMeeting.xmlに条件・SQL文を記載
+	List<DailySummary> findAllReserving(); 	
 }
