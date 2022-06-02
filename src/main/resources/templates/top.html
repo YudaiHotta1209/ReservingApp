@@ -14,12 +14,11 @@
     <div layout:fragment="contents">
 	<div class="container">
 
-	<main>
-		<span th:text="${username}"></span>
-		<span th:text="${password}"></span>
+	<main style="text-align:center">
 		<h1 sec:authorize="hasAuthority('ADMIN')">管理者ホーム</h1>
 		<h1 sec:authorize="hasAuthority('USER')">ユーザーホーム</h1>
 	</main>
+	
 	</div>
 	</div>
 </body>
