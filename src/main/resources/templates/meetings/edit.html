@@ -46,28 +46,20 @@
                       <div class="text-danger" th:if="${#fields.hasErrors('owner')}" th:errors="*{owner}"></div>
                     </div>
                 </div>   
-<!-- 　日時選択フォームフォーム Model名＝daytime  -->          
-                <div class="form-group row">
-                    <label class="col-md-2 control-label">利用日</label>
-                    <div class="col-md-3">
-                      <input class="form-control" type="date" name="start" th:value="*{start}"placeholder="利用日時"/>
-                      <div class="text-danger" th:if="${#fields.hasErrors('start')}" th:errors="*{start}"></div>
-                    </div>
-                </div>   
-<!-- 　日時選択フォームフォーム Model名＝daytime  -->          
+<!-- 　日時選択フォームフォーム Model名＝start  -->          
                 <div class="form-group row">
                     <label class="col-md-2 control-label">利用開始時間</label>
                     <div class="col-md-3">
-                      <input class="form-control" type="time" step="3600" name="TimeStart" th:value="*{TimeStart}"placeholder="利用開始時間"/>
-                      <div class="text-danger" th:if="${#fields.hasErrors('TimeStart')}" th:errors="*{TimeStart}"></div>
+                      <input class="form-control" type="time" step="3600" name="start" th:value="*{start}"placeholder="利用開始時間"/>
+                      <div class="text-danger" th:if="${#fields.hasErrors('start')}" th:errors="*{start}"></div>
                     </div>
                 </div>
-<!-- 　日時選択フォームフォーム Model名＝daytime  -->          
+<!-- 　日時選択フォームフォーム Model名＝end -->          
                 <div class="form-group row">
                     <label class="col-md-2 control-label">利用終了時間</label>
                     <div class="col-md-3">
-                      <input class="form-control" type="time" step="3600" name="TimeEnd" th:value="*{TimeEnd}"placeholder="利用終了時間"/>
-                      <div class="text-danger" th:if="${#fields.hasErrors('TimeEnd')}" th:errors="*{TimeEnd}"></div>
+                      <input class="form-control" type="time" step="3600" name="end" th:value="*{end}"placeholder="利用終了時間"/>
+                      <div class="text-danger" th:if="${#fields.hasErrors('end')}" th:errors="*{end}"></div>
                     </div>
                 </div>     
       

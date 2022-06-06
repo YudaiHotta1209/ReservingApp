@@ -62,7 +62,7 @@
 											right : 'dayGridMonth,listYear'
 										},
 
-										displayEventTime : false,
+										displayEventTime : true,
 										googleCalendarApiKey : 'AIzaSyDcb8Wa4Ct4FYhT1OPE_lHhvDSugP531Xs',
 										events : 'reservingtest0420@gmail.com',
 
@@ -75,10 +75,6 @@
 									      events: {								              								             
 									          url : '/Calendar/Reserving'
 									        },
-									        eventRender : function(event, element) {
-									        element.find('span.fc-title').html(element.find('span.fc-title').text());
-									        /*各イベントにhtmlのリンク設置*/
-									        }
 									});
 							calendar.render();
 						});

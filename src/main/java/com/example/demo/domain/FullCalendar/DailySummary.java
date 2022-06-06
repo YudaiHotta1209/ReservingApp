@@ -20,11 +20,7 @@ public class DailySummary {
 
 	
 	/* 使用開始時間 */ 
-	private String TimeStart;
-	  
-	/* 使用終了時間 */
-	private String TimeEnd;
-	 
+	private String end;
 	
 	
 	
@@ -52,21 +48,15 @@ public class DailySummary {
 	
 	
 	//-------------------使用開始時間----------------------//		
-	public String getTimeStart() {
-		return TimeStart;
+	public String getEnd() {
+		return end;
 	}
-	public void setTimeStart(String TimeStart) {
-		this.TimeStart = TimeStart;
+	public void setEnd(String end) {
+		this.end = end;
 	}
 
 	
 	
-	//-------------------使用終了時間----------------------//	
-	public String getTimeEnd() {
-		return TimeEnd;
-	}
-	public void setTimeEnd(String TimeEnd) {
-		this.TimeEnd = TimeEnd;
-	}
+
 
 }

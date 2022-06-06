@@ -27,24 +27,19 @@ public class Meeting {
 	@NotBlank(message = "利用者名を入力してください。")
 	private String owner;
 	
-	
-	//利用日時
-	@NotBlank(message = "利用日時を入力してください。")
+	//利用開始時間
+	/* @DateTimeFormat(pattern= "yyyy/MM/dd HH:mm:ss") */
+	@NotBlank
 	private String start;
 	
-	//利用開始時間
-	@NotBlank(message = "利用開始時間を入力してください。")
-	private String TimeStart;
-	
 	//利用終了時間
-	@NotBlank(message = "利用終了時間を入力してください。")
-	private String TimeEnd;
-
+	/* @DateTimeFormat(pattern= "yyyy/MM/dd HH:mm:ss") */
+	@NotBlank
+	private String end;
 	
 	//用途
 	@NotBlank(message = "用途を選択してください。")
 	private String title;
-	
 	
 	//利用人数
 	@Min(value = 1, message = "2以上の利用予定人数を入力してください。")
@@ -94,30 +89,20 @@ public class Meeting {
     }
     
     
-  //-------------------使用日----------------------//
+  //-------------------使用開始日時----------------------//
     public String getStart() {
         return start;
     }
     public void setStart(String start) {
         this.start = start;
     }
-    
-    
-  //-------------------使用開始時間----------------------//
-    public String getTimeStart() {
-        return TimeStart;
+        
+  //-------------------使用終了日時----------------------//
+    public String getEnd() {
+        return end;
     }
-    public void setTimeStart(String TimeStart) {
-        this.TimeStart = TimeStart;
-    }
-
-    
-  //-------------------使用終了時間----------------------//
-    public String getTimeEnd() {
-        return TimeEnd;
-    }
-    public void setTimeEnd(String TimeEnd) {
-        this.TimeEnd = TimeEnd;
+    public void setTimeEnd(String end) {
+        this.end = end;
     }
     
     

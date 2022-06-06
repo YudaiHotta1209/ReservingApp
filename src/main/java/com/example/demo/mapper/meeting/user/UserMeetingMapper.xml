@@ -5,11 +5,11 @@
 	
 	<select id="selectOne" resultType="com.example.demo.domain.Meeting.Meeting" >select*from meeting_info where id= #{id} </select>
 	
-	<insert id="insert" keyProperty="id" useGeneratedKeys="true">insert into meeting_info(roomid,username,people,owner,title,remarks,start,Timestart,TimeEnd) values(#{roomid}, #{username}, #{people}, #{owner}, #{title}, #{remarks}, #{start}, #{TimeStart}, #{TimeEnd})</insert>
+	<insert id="insert" keyProperty="id" useGeneratedKeys="true">insert into meeting_info(roomid,username,people,owner,title,remarks,start,end) values(#{roomid}, #{username}, #{people}, #{owner}, #{title}, #{remarks}, #{start}, #{end})</insert>
 	
-	<update id="update">update meeting_info set roomid=#{roomid}, username=#{username}, start=#{start},TimeStart=#{TimeStart},TimeEnd=#{TimeEnd} ,people=#{people}, owner=#{owner}, title=#{title}, remarks=#{remarks}  where id= #{id}</update>
+	<update id="update">update meeting_info set roomid=#{roomid}, username=#{username}, start=#{start},end=#{end},people=#{people}, owner=#{owner}, title=#{title}, remarks=#{remarks}  where id= #{id}</update>
 	
 	<delete id="delete">delete from meeting_info where id = #{id}</delete>
 	
-	<select id="findAllReserving" resultType="com.example.demo.domain.FullCalendar.DailySummary">select title,start,TimeStart,TimeEnd from meeting_info </select>
+	<select id="findAllReserving" resultType="com.example.demo.domain.FullCalendar.DailySummary">select title,start,end from meeting_info </select>
 </mapper>
