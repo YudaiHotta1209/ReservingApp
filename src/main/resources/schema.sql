@@ -1,18 +1,20 @@
+
 CREATE SCHEMA IF NOT EXISTS `buildings`;
 USE `buildings`;
 
 
 CREATE TABLE IF NOT EXISTS meeting_info(
-　id bigint(50) NOT NULL AUTO_INCREMENT,
+　id bigint(4000) NOT NULL AUTO_INCREMENT,
   roomid int(11) NOT NULL, 
   username VARCHAR(64),
-  day varchar(20),
-  start TIMESTAMP.
-  end  TIMESTAMP,
+  title VARCHAR(10),
+  day VARCHAR(20),
+  start TIMESTAMP,
+  end TIMESTAMP, 
   purpose VARCHAR(64),
   owner VARCHAR(64),
   people int(20),
-  remarks VARCHAR(100),
+  remarks VARCHAR(100)
 );
 
 
@@ -30,4 +32,4 @@ CREATE TABLE IF NOT EXISTS user_info(
   workplace VARCHAR(64),
   mailaddress VARCHAR(100),
   information VARCHAR(100),
-);
+  );

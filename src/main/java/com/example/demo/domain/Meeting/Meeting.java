@@ -101,7 +101,7 @@ public class Meeting {
     public String getEnd() {
         return end;
     }
-    public void setTimeEnd(String end) {
+    public void setEnd(String end) {
         this.end = end;
     }
     
