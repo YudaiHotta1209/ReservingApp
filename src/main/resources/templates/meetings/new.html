@@ -33,8 +33,7 @@
                          <div th:if="${#fields.hasErrors('roomid')}" th:errors="*{roomid}"></div>
                        </div>                    
                </div>               
-               
-                        
+                                   
 <!--  ID入力フォーム  Model名＝username -->                  
                 <div class="form-group row">
                     <label class="col-md-2 control-label">ユーザーID</label>
@@ -43,8 +42,7 @@
                       <div class="text-danger" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></div>
                     </div>
                 </div>
-                
-                
+                                
 <!--  利用者名入力フォーム Model名＝owner  -->                  
                 <div class="form-group row">
                     <label class="col-md-2 control-label">利用者名</label>
@@ -62,6 +60,7 @@
                       <div class="text-danger" th:if="${#fields.hasErrors('start')}" th:errors="*{start}"></div>
                     </div>
                 </div>   
+                
 <!-- 　日時選択フォームフォーム Model名＝daytime  -->          
                 <div class="form-group row">
                     <label class="col-md-2 control-label">利用終了日時</label>
