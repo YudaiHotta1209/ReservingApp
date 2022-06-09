@@ -8,18 +8,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping
 public class LoginController {
 
-	/* トップページ画面遷移 */
+	/* ①トップページ画面遷移 */
     @GetMapping
     public String top() {
         return "top";
     }
 
-	/* ログインページ表示 */
+	/* ②ログインページ画面遷移 */
     @GetMapping("/login")
     public String showLoginForm() {
         return "Login/form";
     }
-
+    /* ③ログアウト確認画面遷移 */
     @GetMapping("/logout")
     public String showLogoutForm() {
         return "Login/logout";
