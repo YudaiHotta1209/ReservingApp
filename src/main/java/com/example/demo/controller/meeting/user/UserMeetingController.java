@@ -30,10 +30,9 @@ public class UserMeetingController {
 //－－－－－－－－－－－－－－－－－－検索処理（履歴一覧表示）－－－－－－－－－－－－－－－－－－－－//
 
 	/*
-	 * セッションにusernameを格納し、画面遷移時に再検索。 
 	 * ①ログイン画面からCustomUserDetailsにusername/passwordを渡す
 	 * ②CustomUserDetailsからusernameを取得
-	 * ③取得したusernameを
+	 * ③取得したusernameをもとに検索処理
 	 * ④mapperクラスでModelに渡した変数で検索をかける 
 	 * ⑤結果を"meetings/list"に返す
 	 */

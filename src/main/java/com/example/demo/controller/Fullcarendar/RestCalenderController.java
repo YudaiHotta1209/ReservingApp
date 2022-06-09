@@ -20,7 +20,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  * 機能実装方法の手本 
  * （１）FullCalendar用のmodelを作成 
  * （２）DBから予約履歴を検索
- * （３）（２）を（１）で作成したmodelに代入 
+ * （３）（２）を（１）で作成したmodelに格納
  * （４）（２）のデータ（model）をRestControllerに渡す。
  * （５）予約情報の文字列にリンクタグを埋め込む。 
  * （６）データをJson化し、FullCalendarに渡す。 

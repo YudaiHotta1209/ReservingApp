@@ -24,16 +24,9 @@ import com.example.demo.service.Meeting.admin.AdminMeetingService;
 /*
  * <--管理者側から行う操作--> 
  * ①ユーザーが登録した予約情報を全件取得する 
- * ②それぞれに対してコメントする
  * 
  * <--既存機能の活用--> 
  * ①詳細表示 ②削除処理 ③変更処理
- * 
- * <--ユーザー側にはあり管理者側にはない機能--> 
- * ①特定のユーザーの登録履歴を一覧表示させる機能
- * 
- * <--余裕があれば追加したい機能--> 
- * ①検索処理
  */
 
 //－－－－－－－－－－－－－－－－－－メモ－－－－－－－－－－－－－－－－－－－－－//
@@ -48,7 +41,6 @@ public class AdminMeetingController {
 	
 //－－－－－－－－－－－－－－－－－－画面遷移－－－－－－－－－－－－－－－－－－－－－//	
 	//①全ユーザー予約リスト表示
-	//※全件表示
 	@GetMapping
 	public String list(Model model) {
 		model.addAttribute("meeting_info", adminMeetingService.findAll());
