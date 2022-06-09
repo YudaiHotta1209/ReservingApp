@@ -18,8 +18,7 @@
             <form th:method="post" th:action="@{/meetings}" th:object="${meeting_info}"> 
 
                
-              
-              
+                        
 <!--  部屋番号選択フォーム Model名＝roomid  -->            
                <div class="form-group row">
                    <label class="col-md-2 control-label">集会室番号</label>
@@ -56,7 +55,7 @@
                 <div class="form-group row">
                     <label class="col-md-2 control-label">利用開始日時</label>
                     <div class="col-md-3">
-                      <input class="form-control" type="datetime-local" name="start" th:value="*{start}"placeholder="利用開始日時"/>
+                      <input class="form-control" type="datetime-local" name="start" min=YYYY-MM-DDT09:00 max=YYYY-MM-DDT17:00 step="3600" th:value="*{start}"placeholder="利用開始日時"/>
                       <div class="text-danger" th:if="${#fields.hasErrors('start')}" th:errors="*{start}"></div>
                     </div>
                 </div>   
@@ -65,37 +64,17 @@
                 <div class="form-group row">
                     <label class="col-md-2 control-label">利用終了日時</label>
                     <div class="col-md-3">
-                      <input class="form-control" type="datetime-local" name="end" th:value="*{end}"placeholder="利用終了日時"/>
+                      <input class="form-control" type="datetime-local" name="end" min=YYYY-MM-DDT09:00 max=YYYY-MM-DDT17:00 step="3600" th:value="*{end}"placeholder="利用終了日時"/>
                       <div class="text-danger" th:if="${#fields.hasErrors('end')}" th:errors="*{end}"></div>
                     </div>
                 </div>                   
-                
-                
-                
-<!-- 　日時選択フォームフォーム Model名＝daytime  -->          
-<!--                 <div class="form-group row">
-                    <label class="col-md-2 control-label">利用開始時間</label>
-                    <div class="col-md-3">
-                      <input class="form-control" type="time" step="3600" name="TimeStart" th:value="*{TimeStart}"placeholder="利用開始時間"/>
-                      <div class="text-danger" th:if="${#fields.hasErrors('TimeStart')}" th:errors="*{TimeStart}"></div>
-                    </div>
-                </div> -->
-<!-- 　日時選択フォームフォーム Model名＝daytime  -->          
-<!--                 <div class="form-group row">
-                    <label class="col-md-2 control-label">利用終了時間</label>
-                    <div class="col-md-3">
-                      <input class="form-control" type="time" step="3600" name="TimeEnd" th:value="*{TimeEnd}"placeholder="利用終了時間"/>
-                      <div class="text-danger" th:if="${#fields.hasErrors('TimeEnd')}" th:errors="*{TimeEnd}"></div>
-                    </div>
-                </div>    -->             
-               
-     
-                     
+                                        
 <!--  用途選択フォーム Model名＝purpose  -->                   
                 <div class="form-group">
                     <label class="col-md-2 control-label">用途</label>
                     <div class="col-md-5">
                         <select class="form-select form-select-sm" aria-label=".form-select-lg example"  name="title" th:value="*{title}" >
+                        <option selected>用途選択</option>
                             <option value="打合せ">打合せ</option>
                             <option value="自治会・子供会">自治会・子供会</option>
                             <option value="お稽古事">お稽古事</option>
@@ -139,6 +118,6 @@
         </div>
       </div>
     </div>
-    </div>
+ 
 </body>
 </html>
