@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.Announcement.AnnouncementMapper">
+	<select id="findAll" resultType="com.example.demo.domain.Announcement.Announcement">select*from announcement </select>
+	
+	<select id="selectOne" resultType="com.example.demo.domain.Announcement.Announcement" >select*from announcement where id= #{id} </select>
+	
+	<insert id="insert" keyProperty="id" useGeneratedKeys="true">insert into announcement(day_post,message) values(#{day_post}, #{message})</insert>
+	
+	<update id="update">update announcement set day_post=#{day_post}, message=#{message}  where announce_id= #{announce_id}</update>
+	
+	<delete id="delete">delete from announcement where id = #{id}</delete>
+</mapper>

@@ -25,6 +25,12 @@ CREATE TABLE IF NOT EXISTS users(
   authority enum('ADMIN','USER')not null
 );
 
+CREATE TABLE IF NOT EXISTS announcement(
+　announce_id int NOT NULL AUTO_INCREMENT,
+  day_post TIMESTAMP,
+  message VARCHAR(40),
+  );
+
 
 CREATE TABLE IF NOT EXISTS user_info(
   username VARCHAR(64),
