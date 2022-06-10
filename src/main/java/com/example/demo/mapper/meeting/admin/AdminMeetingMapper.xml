@@ -5,18 +5,10 @@
 	
 	<select id="selectOne" resultType="com.example.demo.domain.Meeting.Meeting" >select*from meeting_info where id= #{id} </select>
 	
-	<insert id="insert" keyProperty="id" useGeneratedKeys="true">insert into meeting_info(roomid,username,people,owner,title,remarks,start,Timestart,TimeEnd) values(#{roomid}, #{username}, #{people}, #{owner}, #{title}, #{remarks}, #{start}, #{TimeStart}, #{TimeEnd})</insert>
+	<insert id="insert" keyProperty="id" useGeneratedKeys="true">insert into meeting_info(roomid,username,people,owner,title,start,end,remarks) values(#{roomid}, #{username}, #{people},#{owner},#{title},#{start},#{end},#{remarks})</insert>
 	
-	<update id="update">update meeting_info set roomid=#{roomid}, username=#{username}, start=#{start},TimeStart=#{TimeStart},TimeEnd=#{TimeEnd} ,people=#{people}, owner=#{owner}, title=#{title}, remarks=#{remarks}  where id= #{id}</update>
+	<update id="update">update meeting_info set roomid=#{roomid}, username=#{username}, start=#{start},end=#{end},people=#{people}, owner=#{owner}, title=#{title},remarks=#{remarks} where id= #{id}</update>
 	
 	<delete id="delete">delete from meeting_info where id = #{id}</delete>
 </mapper>
 
-<!-- 参考URL
-①https://qiita.com/fftcy-sttkm/items/57e8596820cff28ec682#%E7%92%B0%E5%A2%83
-Xmlファイル検索条件 -->
-
-<!-- selectOne  ==  特定の登録情報をidをもとに１件表示 -->
-<!-- findAll　　==  全件表示処理 -->
-<!-- update文　 ==  更新処理 -->
-<!-- delete文　 ==  削除処理-->

@@ -1,4 +1,4 @@
-package com.example.demo.controller.meeting.admin;
+package com.example.demo.controller.announcement;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,15 +10,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.example.demo.domain.Meeting.Meeting;
-import com.example.demo.service.Meeting.admin.AdminMeetingService;
+import com.example.demo.domain.Announcement.Announcement;
+import com.example.demo.service.Announcement.AnnouncementService;
 
 
 @Controller
-@RequestMapping("/meetings/admin")
+@RequestMapping("/announcements")
 
 //－－－－－－－－－－－－－－－－－－メモ－－－－－－－－－－－－－－－－－－ーーー
 /*
@@ -31,27 +30,24 @@ import com.example.demo.service.Meeting.admin.AdminMeetingService;
 
 //－－－－－－－－－－－－－－－－－－メモ－－－－－－－－－－－－－－－－－－－－－//
 
-public class AdminMeetingController {
+public class announcementController {
 
 	@Autowired
-	private AdminMeetingService adminMeetingService;
-	
-	
-	
+	private AnnouncementService announcementService;
 	
 //－－－－－－－－－－－－－－－－－－画面遷移－－－－－－－－－－－－－－－－－－－－－//	
 	//①全ユーザー予約リスト表示
 	@GetMapping
 	public String list(Model model) {
-		model.addAttribute("meeting_info", adminMeetingService.findAll());
-		System.out.println("【DEBUG】0010_TEST : " + model);
-		return "Admin/request/m-RequestList";
+		model.addAttribute("announce_info", announcementService.findAll());
+		System.out.println("【DEBUG】Announce_TEST01 : " + model);
+		return "top-board";
 	}
 	
     //②新規登録ページ表示
-	@GetMapping("/RequestNew")
-	public String newMeeting(@ModelAttribute("meeting_info") Meeting meeting, Model model) {
-		return "Admin/request/m-RequestNew";
+	@GetMapping("/comment-new")
+	public String newMeeting(@ModelAttribute("announce_info") Announcement announcement, Model model) {
+		return "Announce/comment-new";
 	}
 
 //－－－－－－－－－－－－－－－－－－画面遷移－－－－－－－－－－－－－－－－－－－－－//	
@@ -63,52 +59,20 @@ public class AdminMeetingController {
 	
 	//①登録処理（データ登録）
 	@PostMapping
-	public String create(@ModelAttribute("meeting_info") @Validated Meeting meeting, BindingResult result, Model model) {
+	public String create(@ModelAttribute("announce_info") @Validated Announcement announcement, BindingResult result, Model model) {
 		if (result.hasErrors()) {
-			return "Admin/request/m-RequestNew";
+			return "Announcement/comment-new";
 		} else {
-			adminMeetingService.insert(meeting);
-			return "redirect:/meetings/admin";
+			announcementService.insert(announcement);
+			return "redirect:/announcements";
 		}
-	}
-	
-	
-	//②詳細表示（画面遷移）
-	@GetMapping("/{id}")
-	public String show(@PathVariable Long id, Model model) {
-		model.addAttribute("meeting_info", adminMeetingService.selectOne(id));
-		return "Admin/request/m-RequestShow";
-	}
-
-
-
-    //③編集処理（画面遷移）
-	@GetMapping("/{id}/edit")
-	public String edit(@PathVariable Long id, @ModelAttribute("meeting_info") Meeting meeting, Model model) {
-		model.addAttribute("meeting_info", adminMeetingService.selectOne(id));
-		return "Admin/request/m-RequestEdit";
-	}
-	
-
-	
-    //④更新処理（データ更新）
-	@PutMapping("/{id}")
-	public String update(@PathVariable Long id, @ModelAttribute("meeting_info") @Validated Meeting meeting, BindingResult result, Model model) {
-		if (result.hasErrors()) {
-			model.addAttribute("meeting_info", meeting);
-			return "Admin/request/m-RequestEdit";
-		} else {
-			meeting.setId(id);
-			adminMeetingService.update(meeting);
-			return "redirect:/meetings/admin";
-		}
-	}
+	}		
 	
 	//⑤削除処理
 	@DeleteMapping("{id}")
 	public String delete(@PathVariable Long id) {
-		adminMeetingService.delete(id);
-		return "redirect:/meetings/admin"; 
+		announcementService.delete(id);
+		return "redirect:/announcements"; 
 	}
 //－－－－－－－－－－－－－－－－－－CRUD処理－－－－－－－－－－－－－－－－－－－－//
 }

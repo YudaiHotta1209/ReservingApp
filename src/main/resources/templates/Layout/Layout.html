@@ -43,7 +43,7 @@
 				<br>		  
            <!----------------------------------  ユーザー専用メニュー  ------------------------------------>                    
                    <li  class="nav-item border-bottom" sec:authorize="hasAuthority('USER')">
-                        <a th:href="@{'/top'}">トップ</a>
+                        <a th:href="@{'/announcements'}">トップ</a>
                         <a th:href="@{/Schedule}">予約状況</a>  
                         <a th:href="@{/meetings/list}">集会室予約履歴</a>
                         <a th:href="@{/ContactForm}">問い合わせ</a>
@@ -54,11 +54,12 @@
                	             
 　 　      <!--------------------------------- 管理者用表示メニュー --------------------------------------->
                    <li class="nav-item border-bottom" sec:authorize="hasAuthority('ADMIN')">
-                        <a th:href="@{'/top'}">トップ</a>
+                        <a th:href="@{'/announcements'}">トップ</a>
                         <a th:href="@{/Schedule}">予約状況</a>  
-                        <a th:href="@{'/users/UserCreate'}">ユーザー登録</a>                      
+                        <a th:href="@{'/users/UserCreate'}">ユーザー登録</a>       
+                        <a th:href="@{'/announcements/comment-new'}">掲示板投稿</a>                 
                         <a th:href="@{'/users'}">登録ユーザー一覧</a>
-                        <a th:href="@{/meetings/admin}">集会室全予約履歴</a>
+                        <a th:href="@{/meetings/admin}">予約申請履歴</a>
                    </li>              
            <!--------------------------------- 管理者用表示メニュー --------------------------------------->          
                 </ul>

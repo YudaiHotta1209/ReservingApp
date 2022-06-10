@@ -23,14 +23,14 @@ public class UserController {
 
 	
 	//－－－－－－－－－－－－－－－－－－画面遷移－－－－－－－－－－－－－－－－－－－－//
-	//ユーザー一覧
+	//①ユーザー一覧画面遷移
 	@GetMapping
 	public String showList(Model model) {
 		model.addAttribute("userList", userService.findAll());
 		return "Admin/users/list";
 	}
 	
-    //User詳細情報登録画面遷移
+    //②User詳細情報登録画面遷移
 	@GetMapping("/UserCreate") 
 	public String showCreationForm(@ModelAttribute UserForm Form) { 
 	  return "Admin/users/creationForm";
@@ -38,7 +38,7 @@ public class UserController {
 	
 	//－－－－－－－－－－－－－－－－－－ユーザー（ID/PASSWORD/Authority)のCRUD処理－－－－－－－－－－－－－－－－－－－－//
 	
-    //ユーザーID・パスワード・権限登録処理
+    //①ユーザーID・パスワード・権限登録処理
 	@PostMapping 
 	public String create(@Validated UserForm form, BindingResult bindingResult) {
 	  if (bindingResult.hasErrors()) { 

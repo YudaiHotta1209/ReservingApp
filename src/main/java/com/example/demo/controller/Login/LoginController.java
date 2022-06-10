@@ -11,7 +11,7 @@ public class LoginController {
 	/* ①トップページ画面遷移 */
     @GetMapping
     public String top() {
-        return "top";
+        return "top-board";
     }
 
 	/* ②ログインページ画面遷移 */
