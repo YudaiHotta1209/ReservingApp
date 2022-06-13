@@ -1,5 +1,5 @@
 # Spring bootサンプルアプリケーション: 共用施設利用申請・問い合わせアプリ
-[[https://github.com/saladlam/spring-noticeboard](https://github.com/YudaiHotta1209/ReservingApp)]([https://github.com/saladlam/spring-noticeboard](https://github.com/YudaiHotta1209/ReservingApp))
+[https://github.com/saladlam/spring-noticeboard](https://github.com/saladlam/spring-noticeboard)
 
 ## 目的
 このアプリケーションを作成した目的は、Spring frameworkを構成する、いろいろなコンポーネントの流れを説明するため。
@@ -29,9 +29,12 @@
 ## アカウント
 | ユーザーネーム | パスワード | 権限 |
 |:-------- |:-------- |:----------- |
-| user1    | user1    | USER        |
-| user2    | user2    | USER        |
-| admin    | admin    | USER, ADMIN |
+| admin    | password1234   | ADMIN |
+| bob      | password1234   | USER  |
+| lisa     | password1234   | USER  |
+| mike     | password1234   | ADMIN |
+| tom      | password1234   | USER  |
+
 
 ## 実装したかった機能
 - ページネーション
