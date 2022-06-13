@@ -1,5 +1,5 @@
 # Spring bootサンプルアプリケーション: 共用施設利用申請・問い合わせアプリ
-[https://github.com/saladlam/spring-noticeboard](https://github.com/saladlam/spring-noticeboard)
+[[https://github.com/saladlam/spring-noticeboard](https://github.com/YudaiHotta1209/ReservingApp)]([https://github.com/saladlam/spring-noticeboard](https://github.com/YudaiHotta1209/ReservingApp))
 
 ## 目的
 このアプリケーションを作成した目的は、Spring frameworkを構成する、いろいろなコンポーネントの流れを説明するため。
