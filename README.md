@@ -10,9 +10,11 @@
 - メールを使用した問い合わせ機能
 - 検索機能
 - CRUD機能
+- パスワードのハッシュ化
 
 ## 使われる主要なコンポーネント
 - Spring Boot 2.1.X
+- Bootstrap
 - Spring MVC 5.1.X と thymeleaf 3.0.X
 - Spring Security 5.1.X
 - Spring JDBC 5.1.X
