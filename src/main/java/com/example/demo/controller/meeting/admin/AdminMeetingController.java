@@ -35,16 +35,12 @@ public class AdminMeetingController {
 
 	@Autowired
 	private AdminMeetingService adminMeetingService;
-	
-	
-	
-	
+		
 //－－－－－－－－－－－－－－－－－－画面遷移－－－－－－－－－－－－－－－－－－－－－//	
 	//①全ユーザー予約リスト表示
 	@GetMapping
 	public String list(Model model) {
 		model.addAttribute("meeting_info", adminMeetingService.findAll());
-		System.out.println("【DEBUG】0010_TEST : " + model);
 		return "Admin/request/m-RequestList";
 	}
 	

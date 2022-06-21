@@ -15,19 +15,18 @@ public class AnnouncementService {
 	@Autowired
 	private AnnouncementMapper announcemenMapper;
 
-	// 全件取得
-
+	//①全件取得
 	@Transactional
 	public List<Announcement> findAll() {
 		return announcemenMapper.findAll();
 	}
 
-	// 登録
+	//②登録
 	@Transactional
 	public void insert(Announcement announcement) {
 		announcemenMapper.insert(announcement);
 	}
-
+    //③削除
 	@Transactional
 	public void delete(Long id) {
 		announcemenMapper.delete(id);

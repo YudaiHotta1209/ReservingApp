@@ -10,7 +10,7 @@ $(document).ready(function() {
         // Ajaxを使ってメールを送信
         $.ajax({
             type: "POST",
-            url: "./sendmail",
+            url: "/sendmail",
             dataType: "json",
             data: JSON.stringify(data),
             contentType: 'application/json',

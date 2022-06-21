@@ -34,6 +34,6 @@ public class SendMailController {
         msg.setSubject("お問い合わせがありました");
         msg.setText("お問い合わせは下記の通りです。\n\n---------------------------\n" + body + "\n---------------------------");
         mailSender.send(msg);
-        return Arrays.asList("OK");
-    }
+		return Arrays.asList("OK");
+	}
 }

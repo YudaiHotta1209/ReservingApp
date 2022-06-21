@@ -14,31 +14,32 @@
   <div layout:fragment="contents">
   <div class="container">
     <div class="card card-primary mb-3">
-            <h5 >入力フォーム</h5>
+        <div class="title">
+            <h1>入力フォーム</h1>
+        </div>
+        <br>
+            <br>
             <form th:method="post" th:action="@{/announcements}" th:object="${announce_info}"> 
                                                                       
 <!-- 　日時選択フォームフォーム Model名＝day_post  -->          
                 <div class="form-group row">
-                    <label class="col-md-2 control-label">投稿日時</label>
+                    <label class="col-md-4 control-label"><span class="label label-danger">必須</span>投稿日時</label>
                     <div class="col-md-3">
-                      <input class="form-control" type="datetime-local" name="day_post"   th:value="*{day_post}"placeholder="投稿日時"/>
-                      <div class="text-danger" th:if="${#fields.hasErrors('day_post')}" th:errors="*{day_post}"></div>
+                      <input class="form-control" type="datetime-local" name="daypost"   th:value="*{daypost}"placeholder="投稿日時"/>
+                      <div class="text-danger" th:if="${#fields.hasErrors('daypost')}" th:errors="*{daypost}"></div>
                     </div>
                 </div>   
-
-                
+                <hr>                
 <!-- 　お知らせ内容入力フォーム Model名＝message -->     
                 <div class="form-group row">
-                    <label class="col-md-2 control-label">お知らせ内容</label>
+                    <label class="col-md-4 control-label"><span class="label label-danger">必須</span>お知らせ内容</label>
 
                     <div class="col-md-8">
                       <input class="form-control" type="text" name="message" th:value="*{message}" placeholder="掲示板へ投稿する内容をご入力ください"/>
                       <div class="text-danger" th:if="${#fields.hasErrors('message')}" th:errors="*{message}"></div>
                     </div>
-                </div>            
-
-
-  
+                </div>     
+                <hr>        
 <!--  DB送信用ボタン  -->                                 
                 <div class="form-group row">
                     <div class="offset-md-2 col-md-10">

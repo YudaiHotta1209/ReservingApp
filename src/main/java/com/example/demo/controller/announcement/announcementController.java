@@ -1,5 +1,7 @@
 package com.example.demo.controller.announcement;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,7 +24,7 @@ import com.example.demo.service.Announcement.AnnouncementService;
 //－－－－－－－－－－－－－－－－－－メモ－－－－－－－－－－－－－－－－－－ーーー
 /*
  * <--管理者側から行う操作--> 
- * ①ユーザーが登録した予約情報を全件取得する 
+ * ①ユーザーが申請した予約情報を全件取得する 
  * 
  * <--既存機能の活用--> 
  * ①詳細表示 ②削除処理 ③変更処理
@@ -36,11 +38,12 @@ public class announcementController {
 	private AnnouncementService announcementService;
 	
 //－－－－－－－－－－－－－－－－－－画面遷移－－－－－－－－－－－－－－－－－－－－－//	
-	//①全ユーザー予約リスト表示
+	//①全ユーザー申請リスト表示	
 	@GetMapping
 	public String list(Model model) {
-		model.addAttribute("announce_info", announcementService.findAll());
-		System.out.println("【DEBUG】Announce_TEST01 : " + model);
+		List<Announcement>announcement = announcementService.findAll();		
+		model.addAttribute("announce_info", announcement);		
+		System.out.println("【DEBUG】Announce_TEST02 : " +announcement);
 		return "top-board";
 	}
 	
@@ -55,8 +58,6 @@ public class announcementController {
 
 	
 //－－－－－－－－－－－－－－－－－－CRUD処理－－－－－－－－－－－－－－－－－－－－//
-
-	
 	//①登録処理（データ登録）
 	@PostMapping
 	public String create(@ModelAttribute("announce_info") @Validated Announcement announcement, BindingResult result, Model model) {
@@ -68,7 +69,7 @@ public class announcementController {
 		}
 	}		
 	
-	//⑤削除処理
+	//②削除処理
 	@DeleteMapping("{id}")
 	public String delete(@PathVariable Long id) {
 		announcementService.delete(id);

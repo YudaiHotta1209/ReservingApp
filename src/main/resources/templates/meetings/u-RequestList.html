@@ -24,8 +24,9 @@
 
 		<div class="container">
 			<div class="card card-primary mb-3">
+			  <div class="title">
 				<h1>申請リスト</h1>
-
+              </div>
 						<!-- 登録件数が0件の場合（meeting.siza(0)に表示される-->
 						<div class="card-body" th:if="!${meeting_info.size()}">
 							<p>予約リクエストがありません。</p>
@@ -42,7 +43,8 @@
 									<th style="width: 10%">利用者名</th>
 									<th style="width: 10%">利用開始日時間</th>
 									<th style="width: 10%">利用予定人数</th>
-									<th style="width: 10%">用途</th>
+									<th style="width: 30%">用途</th>
+									<th style="width: 10%">承認状況</th>
 									<th style="width: 30%">操作</th>
 								</tr>
 							</thead>
@@ -55,6 +57,7 @@
 									<td th:text="*{start}"></td>
 									<td th:text="*{people}"></td>
 									<td th:text="*{title}"></td>
+									<td th:text="*{admincomment}"></td>
 									<td class="float-right">
 										<form th:action="@{/meetings/{id}(id=*{id})}"th:method="delete">
 											<a class="btn btn-primary"th:href="@{/meetings/{id}(id=*{id})}">詳細</a> 

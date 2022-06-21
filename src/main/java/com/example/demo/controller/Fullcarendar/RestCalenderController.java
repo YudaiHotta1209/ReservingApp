@@ -51,7 +51,6 @@ public class RestCalenderController {
 
 		} catch (IOException ioex) {
 		}
-		 System.out.println("【DEBUG】Calendar_TEST01：" + jsonMsg);
 		return jsonMsg;
 	}
 

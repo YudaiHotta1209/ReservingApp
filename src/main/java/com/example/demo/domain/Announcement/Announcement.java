@@ -2,7 +2,6 @@ package com.example.demo.domain.Announcement;
 
 
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
 
 import lombok.Data;
 
@@ -15,11 +14,11 @@ public class Announcement {
 	
 	//日時
 	@NotBlank
-	private String day_post;
+	private String daypost;
 
-	
 	//コメント内容
-	@NotBlank(message = "コメントを入力してください。")
-	@Size(max = 40)
+	@NotBlank
 	private String message;
+	
+
 }

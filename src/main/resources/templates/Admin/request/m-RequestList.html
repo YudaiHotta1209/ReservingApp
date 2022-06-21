@@ -15,7 +15,9 @@
   <div layout:fragment="contents">
 	<div class="container">
 		<div class="card card-primary mb-3">
+		  <div class="title">
 			<h1>全予約申請リスト</h1>
+		  </div>
   			<div class="card-header">
   				<h5 class="card-title">申請はこちらから→<a href="/meetings/admin/RequestNew" class="btn btn-success float-right">利用申し込み</a></h5>
   			</div>
@@ -23,10 +25,7 @@
      			<p>予約リクエストがありません。</p>
    			</div>
    			
-   			<table class="table table-striped" th:if="${meeting_info.size()}" >
-   			
-   			
-   			
+   			<table class="table table-striped" th:if="${meeting_info.size()}" >  			
      			<thead>
        				<tr >
        				<!-- 表示内容一部省略→全登録内容を知りたい場合は詳細画面へ -->
@@ -35,18 +34,18 @@
          				<th style="width: 10%">利用希望日時</th>
          				<th style="width: 10%">利用予定人数</th>
          				<th style="width: 10%">用途</th>
+         				<th style="width: 10%">承認状況</th>
          				<th style="width: 30%">操作</th>
        				</tr>
-     			</thead>
-     			
+     			</thead>    			
      			<tbody>
        				<tr  th:each="meeting_info: ${meeting_info}" th:object="${meeting_info}">
-       				<!-- 表示内容一部省略→全登録内容を知りたい場合は詳細画面へ -->
          				<td th:text="*{roomid}"></td>
          				<td th:text="*{owner}"></td>
          				<td th:text="*{start}"></td>
          				<td th:text="*{people}"></td>
          				<td th:text="*{title}"></td>
+         				<td th:text="*{admin_comment}"></td>
          				<td class="float-right">
 	         				<form th:action="@{/meetings/admin/{id}(id=*{id})}" th:method="delete">
 	         					<a class="btn btn-primary" th:href="@{/meetings/admin/{id}(id=*{id})}">詳細</a>
@@ -55,10 +54,7 @@
 							</form>
          				</td>
        				</tr>
-     			</tbody>
-     			
-     			
-     			
+     			</tbody>  			
    			</table>
   		</div>
 	</div>
