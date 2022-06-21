@@ -10,7 +10,7 @@ import com.example.demo.domain.Meeting.Meeting;
 @Mapper
 public interface UserMeetingMapper {
 	
-	// ログインしたユーザーID（username)をもとに検索処理
+	//全件取得（ログインしたユーザーID（username)をもとに検索処理）
     List<Meeting> findAll(String username);
 	
 	//1件取得(詳細表示）

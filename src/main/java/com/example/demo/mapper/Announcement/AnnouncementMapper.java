@@ -8,7 +8,7 @@ import com.example.demo.domain.Announcement.Announcement;
 
 @Mapper
 public interface AnnouncementMapper {
-	
+	//全件取得
     List<Announcement> findAll();
 	
 	//登録処理

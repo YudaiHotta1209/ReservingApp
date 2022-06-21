@@ -1,4 +1,3 @@
-
 CREATE SCHEMA IF NOT EXISTS `buildings`;
 USE `buildings`;
 
@@ -28,14 +27,15 @@ CREATE TABLE IF NOT EXISTS users(
 CREATE TABLE IF NOT EXISTS announcement(
 　announce_id int NOT NULL AUTO_INCREMENT,
   day_post TIMESTAMP,
-  message VARCHAR(40),
+  message VARCHAR(64),
   );
-
 
 CREATE TABLE IF NOT EXISTS user_info(
   username VARCHAR(64),
+  owner VARCHAR(20),
   address int,
   workplace VARCHAR(64),
   mailaddress VARCHAR(100),
   information VARCHAR(100),
+  phone int,
   );

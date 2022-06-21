@@ -8,9 +8,8 @@ import com.example.demo.domain.Meeting.Meeting;
 
 @Mapper
 public interface AdminMeetingMapper {
-	
-    List<Meeting> findAll();
-	
+	//全件表示
+    List<Meeting> findAll();	
 	//1件取得(詳細表示）
 	Meeting selectOne(Long id);
 	//登録処理
