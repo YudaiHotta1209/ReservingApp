@@ -12,11 +12,11 @@
 	<groupId>com.example</groupId>
 	<artifactId>test01-1</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>test01-1</name>
+	<name>portfolio</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
-		<start-class>com.example.demo.DemoApplication</start-class>
-		<java.version>1.8</java.version>
+		<java.version>11</java.version>
+		<maven.compiler.target>11</maven.compiler.target>
 	</properties>
 	<dependencies>
 		<dependency>
